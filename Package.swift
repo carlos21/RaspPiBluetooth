@@ -9,7 +9,8 @@ let package = Package(
         Target(name: "CoreServer")
     ],
     dependencies: [
-        .Package(url: "git@github.com:PureSwift/GATT.git", majorVersion: 1)
+        .Package(url: "git@github.com:PureSwift/GATT.git", majorVersion: 1),
+        .Package(url: "https://github.com/uraimo/SG90Servo.swift.git", majorVersion: 1)
     ]
 )
 
