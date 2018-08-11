@@ -10,7 +10,8 @@ let package = Package(
     ],
     dependencies: [
         .Package(url: "git@github.com:PureSwift/GATT.git", majorVersion: 1),
-        .Package(url: "https://github.com/uraimo/SG90Servo.swift.git", majorVersion: 1)
+        .Package(url: "https://github.com/uraimo/SwiftyGPIO.git",
+                 majorVersion: 1)
     ]
 )
 

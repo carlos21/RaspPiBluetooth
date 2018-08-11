@@ -8,6 +8,7 @@
 import Foundation
 import Bluetooth
 import GATT
+import SwiftyGPIO
 
 public class LockServiceController: GATTServiceController {
     
@@ -20,7 +21,7 @@ public class LockServiceController: GATTServiceController {
     internal let serviceHandle: UInt16
     internal let commandHandle: UInt16
     public static var service: GATTProfileService.Type { return LockService.self }
-    
+    private var servoMotor: ServoMotor?
     // MARK: - Initialization
     
     public required init(peripheral: PeripheralProtocol) throws {
@@ -47,6 +48,10 @@ public class LockServiceController: GATTServiceController {
         
         self.serviceHandle = try peripheral.add(service: service)
         self.commandHandle = peripheral.characteristics(for: Command.uuid)[0]
+        
+        let pwms = SwiftyGPIO.hardwarePWMs(for: .RaspberryPi3)!
+        let pwm = (pwms[0]?[.P18])!
+        self.servoMotor = ServoMotor(pwm)
     }
     
     deinit {
@@ -84,11 +89,11 @@ public class LockServiceController: GATTServiceController {
         
         switch command {
         case .open:
-            // open door
+            servoMotor?.move(to: .left)
             print("open")
             
         case .close:
-            // close door
+            servoMotor?.move(to: .right)
             print("close")
         }
     }

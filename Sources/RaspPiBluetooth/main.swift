@@ -12,8 +12,31 @@ import Dispatch
 import Bluetooth
 import GATT
 import CoreServer
+import SwiftyGPIO
 
 var server: CoreServer?
+
+//let pwms = SwiftyGPIO.hardwarePWMs(for: .RaspberryPi3)!
+//let pwm = (pwms[0]?[.P18])!
+//
+//let s1 = ServoMotor(pwm)
+//s1.enable()
+//
+//for i in 0...10 {
+//    print("<- Left")
+//    s1.move(to: .left)
+//    sleep(1)
+//
+//    print("^  Middle")
+//    s1.move(to: .middle)
+//    sleep(1)
+//
+//    print("-> Right")
+//    s1.move(to: .right)
+//    sleep(1)
+//}
+//
+//s1.disable()
 
 func run() throws {
     
