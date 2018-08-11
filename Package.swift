@@ -8,9 +8,8 @@ let package = Package(
         Target(name: "RaspPiBluetooth")
     ],
     dependencies: [
-        .Package(url: "git@github.com:PureSwift/RaspPiGATT.git", majorVersion: 1),
-        .Package(url: "https://github.com/uraimo/SwiftyGPIO.git",
-                 majorVersion: 1)
+        .Package(url: "https://github.com/carlos21/RaspPiGATT.git", majorVersion: 1),
+        .Package(url: "https://github.com/uraimo/SwiftyGPIO.git", majorVersion: 1)
     ]
 )
 

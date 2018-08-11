@@ -7,6 +7,7 @@
 
 import Foundation
 import Bluetooth
+import RaspPiGATT
 import GATT
 import SwiftyGPIO
 

@@ -14,6 +14,7 @@ import Darwin
 import Foundation
 import Bluetooth
 import GATT
+import RaspPiGATT
 
 public final class CoreServer {
     
