@@ -11,7 +11,6 @@ import CoreFoundation
 import Dispatch
 import Bluetooth
 import GATT
-import CoreServer
 import SwiftyGPIO
 
 var server: CoreServer?
